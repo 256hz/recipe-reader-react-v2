@@ -25,13 +25,13 @@ export default class GetRecipe extends React.Component {
             style={styles.container}
             contentContainerStyle={styles.contentContainer}>
                 <View>
-                    <Text style={styles.titleText}>Recipe Reader V0.2</Text>
+                    <Text style={styles.titleText}>You just searched for a recipe</Text>
                 </View>
                 <View>
                     <TextInput
                         style={styles.searchInput}
                         onChangeText={ text => this.setState({text})}
-                        placeholder={'What would you like to make?'}
+                        placeholder={'Nice job'}
                         value={this.state.text}
                     />
                     <Button
