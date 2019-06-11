@@ -1,4 +1,5 @@
 import * as WebBrowser from 'expo-web-browser';
+// import * as axios from '../axios'
 import React from 'react';
 import {
   Button,
@@ -7,12 +8,20 @@ import {
 } from 'react-native';
 import styles from './styles/styles.js'
 
+const api = 'http://localhost:3000/api/v1/'
+
 export default class SearchResults extends React.Component {
   constructor(props) {
     super(props)
+    let query = props.navigation.state.params.text
+
+    fetch(api + 'spoon')
+      .then( res => res.json() )
+      .then( console.log )
+      .catch( console.log )
   }
   
-  submitSearch = () => {
+  submitBack = () => {
     this.props.navigation.navigate('Search')
   }
 
@@ -28,7 +37,7 @@ export default class SearchResults extends React.Component {
           </View>
           <View>
             <Button
-              onPress={this.submitSearch}
+              onPress={this.submitBack}
               title={"Back"}
               color={"#7caa2d"}
               width={10}
